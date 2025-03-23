@@ -2,7 +2,7 @@ version: '3'
 
 networks:
   ecovacs_stack:
-    internal: true
+    # internal: true
 services:
   mysql:
     image: mysql:latest
@@ -34,6 +34,7 @@ services:
       default:
     volumes:
       - ./backend:/opt/app
+    working_dir: /opt/app
     user: '${UID}:${GID}'
     environment:
       - BASE_URL=https://localhost
@@ -42,7 +43,7 @@ services:
       - MYSQL_PASSWORD=dev
       - MYSQL_DATABASE=dev
       - TZ=America/New_York
-    command: bash -c './generate_certs.sh && yarn install && yarn run dev'
+    command: bash -c 'bash ./generate_certs.sh && npm i && npm run dev'
     stdin_open: true
     restart: unless-stopped
 
@@ -80,6 +81,6 @@ services:
       - ./frontend:/opt/app
     ports:
       - 4200:3000
-    command: bash -c 'yarn install && yarn start'
+    command: bash -c 'npm install && npm start'
     stdin_open: true
     restart: unless-stopped

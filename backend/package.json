@@ -25,8 +25,9 @@
   },
   "dependencies": {
     "aedes": "^0.48.0",
-    "canvas": "^2.11.0",
+    "canvas": "^2.11.2",
     "dotenv": "^16.0.1",
+    "js-sdsl": "^4.4.2",
     "lzma-native": "^8.0.6",
     "microtime": "^3.1.1",
     "mqtt": "^4.3.7",

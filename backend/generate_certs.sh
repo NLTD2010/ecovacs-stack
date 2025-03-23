@@ -15,4 +15,5 @@ if [ ! -f ./ssl.crt ]; then
   rm -f ./ssl.crt ./ssl.key
   mkcert -cert-file  ./ssl.crt -key-file  ./ssl.key $domains_list
   mkcert -install
+  export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 fi

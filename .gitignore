@@ -119,3 +119,6 @@ ASL.json
 dlnDrawer.sh
 
 bot_scripts
+
+# for debugging on windows
+generate-cert.ps1 

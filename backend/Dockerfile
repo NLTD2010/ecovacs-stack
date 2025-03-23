@@ -1,5 +1,5 @@
-FROM node:lts-alpine
-RUN apk  --no-cache add bash curl wget build-base g++ cairo-dev jpeg-dev pango-dev giflib-dev --upgrade grep --update sudo
+FROM node:20-alpine
+RUN apk  --no-cache add bash curl wget build-base g++ cairo-dev jpeg-dev pango-dev giflib-dev libc6-compat --upgrade grep --update sudo
 
 RUN echo "node ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/node \
         && chmod 0440 /etc/sudoers.d/node
